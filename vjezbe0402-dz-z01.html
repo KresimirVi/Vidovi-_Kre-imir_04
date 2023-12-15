@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aritmeticka i Geometrijska Sredina</title>
+  <script>
+    /*Napravite HTML dokument s  potrebnim JS dijelom koji će izračunati aritmetičku i geometrijsku  
+	sredinu prirodnih brojeva skupa brojeva. Skup brojeva se unese kroz prompt dijalog koji se korisniku
+	prikaže nakon prvog učitavanja stranice (brojevi odvojeni
+	zarezom, npr 1, 4, 16 ili 1, 3, 6, 7, 18 i sl), a nakon toga izračunaju se aritmetička i geometrijska sredina
+	i ispiše u html dokumentu.*/
+    function aritmetickaSredina(numbers) {
+      var sum=0;
+      for (var i=0;i<numbers.length;i++)
+	  {
+        sum+=numbers[i];
+      }
+      return sum/numbers.length;
+    }
+    function geometrijskaSredina(numbers)
+	{
+      var product=1;
+      for (var i=0;i<numbers.length;i++)
+	  {
+        product*=numbers[i];
+      }
+      return Math.pow(product,1/numbers.length);
+    }
+    function izracunajSredine()
+	{
+      var input=prompt("Unesite brojeve odvojene zarezom:");
+      var numbers=input.split(',').map(Number);
+      var aritmeticka=aritmetickaSredina(numbers);
+      var geometrijska=geometrijskaSredina(numbers);
+      document.getElementById('rezultat').innerHTML='Aritmeticka sredina'+aritmeticka+'<br>Geometrijska sredina'+geometrijska;
+    }
+  </script>
+</head>
+<body>
+  <h1>Izračun Aritmetičke i Geometrijske Sredine</h1>
+  <button onclick="izracunajSredine()">Izračunaj</button>
+  <div id="rezultat"></div>
+</body>
+</html>
+

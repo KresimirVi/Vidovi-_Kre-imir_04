@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zbrajanje Brojeva</title>
+  <script>
+  /*Napisati HTML formu s pripadajućim JS kodom koji radi funkciju zbrajanja 2 broja koja se unesu u prva2 polja
+  a rezultat se nakon klika na dugme Zbroji prikaže u trećem polju*/
+    function zbroji()
+	{
+      var x=parseFloat(document.getElementById('brojX').value);
+      var y=parseFloat(document.getElementById('brojY').value);
+      document.getElementById('rezultat').value = x + y;
+    }
+  </script>
+</head>
+<body>
+  <h1>Zbrajanje Brojeva</h1>
+  <form>
+    <label for="brojX">Unesite broj X</label>
+    <input type="number"id="brojX"name="brojX"required>
+    <br>
+    <label for="brojY">Unesite broj Y:</label>
+    <input type="number"id="brojY"name="brojY"required>
+    <br>
+    <button type="button" onclick="zbroji()">Zbroji</button>
+    <br>
+    <label for="rezultat">Rezultat:</label>
+    <input type="text"id="rezultat"name="rezultat"readonly>
+  </form>
+</body>
+</html>

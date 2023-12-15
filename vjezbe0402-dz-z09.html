@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zarulja</title>
+    <style>
+        #zarulja
+		{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<img id="zarulja" src="zarulja_off_2.png" alt="ugasena zarulja">
+<button onclick="upaliZarulju()"><img src="on-removebg-preview.png"></button>
+<button onclick="ugasiZarulju()"><img src="off-removebg-preview.png"></button>
+<script>
+/*Napravit HTML dokument s JS kodom koji će  pri prvom učitavanju
+ prikazati prekidač u stanju OFF(slika 1) i ugašenu žarulju. Nakon klika na prekidač 'žarulja se pali' i prikaz je kao na slici 2.*/
+    function upaliZarulju()
+	{
+        var zarulja=document.getElementById("zarulja");
+        zarulja.src="zarulja_on_2.png";
+        zarulja.alt="upaljena zarulja";
+    }
+    function ugasiZarulju()
+	{
+        var zarulja=document.getElementById("zarulja");
+        zarulja.src="zarulja_off_2.png";
+        zarulja.alt="ugasena zarulja";
+    }
+</script>
+
+</body>
+</html>
